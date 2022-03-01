@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'TEAUIKit_Example' do
+  pod 'TEAUIKit', :path => '../'
+
+  target 'TEAUIKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
