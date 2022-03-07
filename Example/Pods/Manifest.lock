@@ -1,0 +1,23 @@
+PODS:
+  - SnapKit (5.0.1)
+  - TEAUIKit (0.1.0):
+    - SnapKit (= 5.0.1)
+
+DEPENDENCIES:
+  - TEAUIKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+
+EXTERNAL SOURCES:
+  TEAUIKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  TEAUIKit: 8cbf2f65d9f216fdf9a7935c743a35c50f7002d5
+
+PODFILE CHECKSUM: 60230d0c4b95526e11bc40afdbdc3fbedb304e87
+
+COCOAPODS: 1.11.2

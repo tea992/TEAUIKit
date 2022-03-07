@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		253AA2B7405D4FBE6495BEA6 /* Pods-TEAUIKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEAUIKit_Example.release.xcconfig"; path = "Target Support Files/Pods-TEAUIKit_Example/Pods-TEAUIKit_Example.release.xcconfig"; sourceTree = "<group>"; };
-		27F49FC8DF04F0BD35EF059C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		27F49FC8DF04F0BD35EF059C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		5350BB7322BE6450E03B947B /* Pods_TEAUIKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TEAUIKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* TEAUIKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TEAUIKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,8 +43,8 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		717FCCD66C6C3E69EB78A705 /* Pods-TEAUIKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEAUIKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-TEAUIKit_Tests/Pods-TEAUIKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		90D9FD1EFBFE647A1CBC8241 /* Pods-TEAUIKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEAUIKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-TEAUIKit_Example/Pods-TEAUIKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B41BF64F3DD651CF2C92EE7F /* TEAUIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = TEAUIKit.podspec; path = ../TEAUIKit.podspec; sourceTree = "<group>"; };
-		FBBC7007D1A8C98271221372 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B41BF64F3DD651CF2C92EE7F /* TEAUIKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = TEAUIKit.podspec; path = ../TEAUIKit.podspec; sourceTree = "<group>"; };
+		FBBC7007D1A8C98271221372 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FCCF578AC32AA36D501DE0BF /* Pods_TEAUIKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TEAUIKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEEF3B9E6F9D7C1DD37C1C6D /* Pods-TEAUIKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TEAUIKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-TEAUIKit_Tests/Pods-TEAUIKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,7 +147,6 @@
 				FEEF3B9E6F9D7C1DD37C1C6D /* Pods-TEAUIKit_Tests.debug.xcconfig */,
 				717FCCD66C6C3E69EB78A705 /* Pods-TEAUIKit_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -291,10 +291,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-TEAUIKit_Example/Pods-TEAUIKit_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TEAUIKit/TEAUIKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TEAUIKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,12 +481,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TEAUIKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -494,12 +497,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TEAUIKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
